@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/mi_my_profile"
+        android:icon="@mipmap/my_profile"
+        android:title="My Profile"/>
+    <item android:title="Synchronize"
+        android:icon="@mipmap/sync"
+        android:id="@+id/mi_sync"/>
+    <item android:id="@+id/mi_logout"
+        android:icon="@mipmap/logout"
+        android:title="Logout"/>
+    <item android:id="@+id/mi_calender"
+        android:icon="@mipmap/calender"
+        app:showAsAction="ifRoom"
+        android:title="calender"/>
+</menu>

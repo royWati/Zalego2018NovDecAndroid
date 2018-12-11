@@ -16,6 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registration"/>
-
+        <activity android:name=".Dashboard"/>
     </application>
 </manifest>

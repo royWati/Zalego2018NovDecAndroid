@@ -1,5 +1,6 @@
 package com.zalego2018dec.icare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -137,10 +138,12 @@ public class Registration extends AppCompatActivity {
     }
 
     public void activityNavigation(){
-        /* once the user has registered we want to move
-            to launch an activity for the dashboard
-         */
+        /* this method is responsible for navigation
+            from the registration.java to dashboard.java activity
 
+         */
+        Intent intent = new Intent(Registration.this,Dashboard.class);
+        startActivity(intent);
     }
 
 
