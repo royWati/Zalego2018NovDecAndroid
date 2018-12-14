@@ -5,7 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.GridView;
 import android.widget.Toast;
+
+import com.zalego2018dec.icare.DataObjects.DashboardItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by folio on 12/11/2018.
@@ -13,9 +19,27 @@ import android.widget.Toast;
 
 public class Dashboard extends AppCompatActivity {
 
+    class xmlVariable{
+        GridView gridView;
+    }
+    class storedVariables{
+        List<DashboardItem> dashboardItemList;
+    }
+    //creating objects for xmlVariable and storedVariables
+    // classes in order to access the variables inside
+    xmlVariable xml = new xmlVariable();
+    storedVariables store = new storedVariables();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.dashboard);
+
+
+        //adding data to our list
+        addDashBoardItems();
+
+        // linking our xml varibles to our xml file
+        xml.gridView = findViewById(R.id.gridview_dashboard);
     }
 
     /* we will call the method responsible for
@@ -57,5 +81,32 @@ public class Dashboard extends AppCompatActivity {
         return true;
     }
 
+    // THIS METHOD WILL BE RESPONSBLE FOR ADDING DATA TO OUR LIST
+    public void addDashBoardItems(){
+        /* anytime we call this method we need it to
+            populate data afresh inorder to avoid redudant data
+            thus we have to create a new object of the data
+            everytime
+         */
+        // creating a fresh object of dashboardItemList
+        store.dashboardItemList = new ArrayList<>();
+        // anytime you want to add data you need to create a new
+        // object for it
+        DashboardItem data1 = new DashboardItem();
+        data1.setIcon(R.mipmap.booking);
+        data1.setText("Book Appointment");
+
+        // we add data1 to our list
+        store.dashboardItemList.add(data1);
+        DashboardItem data2 = new DashboardItem();
+        data2.setIcon(R.mipmap.booking);
+        data2.setText("My Records");
+
+        // add data2 to our list
+        store.dashboardItemList.add(data2);
+
+
+
+    }
 
 }
